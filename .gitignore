@@ -3,4 +3,7 @@ data
 *.h5
 models
 *.swp
-*.p
+.DS_Store
+.idea/
+traffic-signs-data/
+lenet.*
