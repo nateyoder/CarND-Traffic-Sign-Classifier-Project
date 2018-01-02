@@ -19,11 +19,11 @@ As part of this project I focused on the following areas:
 [signs]: ./output/AllSignsExamples.png
 [class_count]: ./output/ClassCountByStage.png
 [augmented]: ./output/AugmentedImages.png
-[sign1]: ./examples/30kph_sign.jpg "Traffic Sign 1"
-[sign2]: ./examples/construction_sign.jpg "Traffic Sign 2"
-[sign3]: ./examples/straight_right_sign.png "Traffic Sign 3"
-[sign4]: ./examples/stop_sign.jpeg "Traffic Sign 4"
-[sign5]: ./examples/100kph_sign.jpeg "Traffic Sign 5"
+[sign3]: ./examples/30kph_sign.jpg "Traffic Sign 3"
+[sign5]: ./examples/construction_sign.jpg "Traffic Sign 5"
+[sign4]: ./examples/straight_right_sign.png "Traffic Sign 4"
+[sign1]: ./examples/stop_sign.jpg "Traffic Sign 1"
+[sign2]: ./examples/100kph_sign.jpg "Traffic Sign 2"
 
 ## Rubric Points
 ###Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
@@ -102,10 +102,10 @@ My final model consisted of the following layers:
 | Layer         		|     Description	        					| 
 |:---------------------:|:---------------------------------------------:| 
 | Input         		| 32x32x3 RGB image   							| 
-| Convolution 3x3     	| 1x1 stride, valid padding, kernel size 5, 14 filters, outputs (28x28x14)
+| Convolution 5x5     	| 1x1 stride, valid padding, kernel size 5, 14 filters, outputs (28x28x14)
 | RELU					|												|
 | Max pooling	      	| 2x2 stride,  outputs 14x14x14 	    			|
-| Convolution 3x3	    | 1x1 stride, valid padding, kernel size 5, 30 filters, outputs (10x10x30)      			
+| Convolution 5x5	    | 1x1 stride, valid padding, kernel size 5, 30 filters, outputs (10x10x30)      			
 | RELU					|												|
 | Max pooling	      	| 2x2 stride,  outputs 5x5x32    				|
 | Fully connected		| 300 outputs         							|
@@ -156,6 +156,18 @@ Here are five German traffic signs that I found on the web:
 
 The first step after loading these images was to scale all of these so they 
 were 32 by 32.
+
+The first sign is a stop sign and might be difficult due to the other sign below it and the trees in the background.
+
+The second sign is a 100 kph sign but the image is taken from below the sign so that might be a little difficult.
+
+The third sign is a 30 kph sign and is a bit off center and has a more complicated background than most of the others.
+
+The fourth sign is a arrow sign (straight & right) and might prove more difficult because it had a blank 
+background.
+
+The last sign is a contruction sign but it has small attachments o the top and bottom along with a slightly upwards 
+angle which might make it a bit more challanging.
 
 ####2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
